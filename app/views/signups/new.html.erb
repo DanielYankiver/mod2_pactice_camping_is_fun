@@ -1,0 +1,14 @@
+<h1>Camper Activity Sign Up Page: </h1>
+
+<%= form_for @signup do |f| %>
+    <%= f.label :camper_id, "Find Your Name"%>
+    <%= f.collection_select :camper_id, Camper.all, :id, :name %>
+    <br>
+    <%= f.label :acivity_id, "Pick an Activity"%>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name %>
+    <br>
+    <%= f.label :time, "Pick a Time" %>
+    <%= f.number_field :time %>
+    <br>
+    <%= f.submit %>
+<% end %>
